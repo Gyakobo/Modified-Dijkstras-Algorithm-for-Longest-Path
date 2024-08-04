@@ -1,5 +1,16 @@
 import heapq
 
+graph = {
+    'PVD': [('A', 500), ('C', 600), ('E', 300)],
+    'A': [('B', 1000)],
+    'B': [('HNL', 2500)],
+    'C': [('D', 900)],
+    'D': [('HNL', 2600)],
+    'E': [('F', 700)],
+    'F': [('HNL', 2400)],
+    'HNL': []
+}
+
 def longest_path(graph, start):
     # Initialize distances
     distances = {node: float('-inf') for node in graph}
@@ -21,3 +32,9 @@ def longest_path(graph, start):
                 heapq.heappush(max_heap, (-distance, neighbor))
 
     return distances
+
+# Run the modified Dijkstra's algorithm
+distances = longest_path(graph, 'PVD') 
+
+print(distances)
+# print(f'Longest Path: {di}')
