@@ -11,6 +11,8 @@ To adapt Dijkstra's algorithm to find the longest path instead of the shortest, 
 
 ## Methodology
 
+### Modified Dijkstra's Algorithm for Longest Path
+
 1. Initialize Distances:
 
     * Instead of initializing distances to infinity, initialize them to negative infinity. This is because we are looking for the maximum distance.
@@ -29,6 +31,25 @@ To adapt Dijkstra's algorithm to find the longest path instead of the shortest, 
 
     * Unlike the shortest path, the longest path in a graph with cycles can be infinite. Ensure the graph is a Directed Acyclic Graph (DAG) to avoid this. For practical scenarios like finding a route on a flight map, the graph is typically a DAG because flights don't loop infinitely.
 
+### Steps of the Modified Algorithm
+
+1. Initialize
+
+    * Set the distance to the source node (PVD) to 0 and all other nodes to negative infinity.
+
+    * Initialize the priority queue with the source node.
+
+2. Process the Priority Queue:
+
+    * Extract the node with the maximum distance from the priority queue.
+
+    * For each neighbor of the extracted node, check if the distance to the neighbor can be increased by going through the extracted node.
+
+    * If yes, update the distance and add the neighbor to the priority queue.
+
+3. Continue until queue is empty:
+
+    * Continue the process until the priority queue is empty.
 
 ## License
 MIT
