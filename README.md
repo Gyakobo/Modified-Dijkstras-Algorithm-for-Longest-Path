@@ -51,5 +51,9 @@ To adapt Dijkstra's algorithm to find the longest path instead of the shortest, 
 
     * Continue the process until the priority queue is empty.
 
+## Conclusion
+
+The modified Dijkstra’s algorithm works well for finding the longest path in a DAG or acyclic graph, such as a flight map where cycles don't exist. If the graph contains cycles, additional checks are needed to avoid infinite loops.
+
 ## License
 MIT
