@@ -9,7 +9,15 @@ def longest_path(graph, start):
     max_heap = [(-0, start)]
     heapq.heapify(max_heap)
 
+    while max_heap:
+        current_distance, current_node = heapq.heappop(max_heap)
+        current_distance = -current_distance
 
+        for neighbor, weight in graph[current_node]:
+            distance = current_distance + weight
 
+            if distance > distances[neighbor]:
+                distances[neighbor] = distance
+                heapq.heappush(max_heap, (-distance, neighbor))
 
-
+    return distances
